@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A231079A2AB0C4600072C493 /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23107992AB0C4600072C493 /* OnBoard.swift */; };
 		A26AA92E29BCE10D00008EA2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = A26AA92D29BCE10D00008EA2 /* SwiftUICharts */; };
 		A29BB92129BBD89500F8E9E7 /* CategoriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29BB92029BBD89500F8E9E7 /* CategoriesApp.swift */; };
 		A29BB92329BBD89500F8E9E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29BB92229BBD89500F8E9E7 /* ContentView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A23107992AB0C4600072C493 /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 		A29BB91D29BBD89500F8E9E7 /* Categories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Categories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29BB92029BBD89500F8E9E7 /* CategoriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApp.swift; sourceTree = "<group>"; };
 		A29BB92229BBD89500F8E9E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A29BB92929BBD89600F8E9E7 /* Persistence.swift */,
 				A29BB92B29BBD89600F8E9E7 /* Categories.xcdatamodeld */,
 				A29BB92629BBD89600F8E9E7 /* Preview Content */,
+				A23107992AB0C4600072C493 /* OnBoard.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				A29BB92A29BBD89600F8E9E7 /* Persistence.swift in Sources */,
 				A29BB92D29BBD89600F8E9E7 /* Categories.xcdatamodeld in Sources */,
 				A29BB92329BBD89500F8E9E7 /* ContentView.swift in Sources */,
+				A231079A2AB0C4600072C493 /* OnBoard.swift in Sources */,
 				A29BB92129BBD89500F8E9E7 /* CategoriesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
