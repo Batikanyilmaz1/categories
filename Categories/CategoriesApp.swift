@@ -15,7 +15,7 @@ struct CategoriesApp: App {
     var body: some Scene {
         WindowGroup {
             OnboardingView(
-                appName: "Budget Categoriser",
+                appName: "Categorize Budget",
                 features: [
                     Feature(title: "Categorise Your Products", description: "Add category for your products", icon: "folder"),
                     Feature(title: "List Your Products", description: "Add products in your categories with financial features", icon: "list.bullet.rectangle"),

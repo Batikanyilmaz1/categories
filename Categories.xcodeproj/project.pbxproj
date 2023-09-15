@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21833D82AB4D53500557A45 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21833D72AB4D53500557A45 /* Keyboard.swift */; };
 		A231079A2AB0C4600072C493 /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23107992AB0C4600072C493 /* OnBoard.swift */; };
 		A26AA92E29BCE10D00008EA2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = A26AA92D29BCE10D00008EA2 /* SwiftUICharts */; };
 		A29BB92129BBD89500F8E9E7 /* CategoriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29BB92029BBD89500F8E9E7 /* CategoriesApp.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21833D72AB4D53500557A45 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		A23107992AB0C4600072C493 /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 		A29BB91D29BBD89500F8E9E7 /* Categories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Categories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29BB92029BBD89500F8E9E7 /* CategoriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApp.swift; sourceTree = "<group>"; };
@@ -83,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				A29BB91F29BBD89500F8E9E7 /* Categories */,
-				A29BB93529BBD89600F8E9E7 /* CategoriesTests */,
 				A29BB93F29BBD89600F8E9E7 /* CategoriesUITests */,
 				A29BB91E29BBD89500F8E9E7 /* Products */,
 			);
@@ -102,6 +103,7 @@
 		A29BB91F29BBD89500F8E9E7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				A21833D72AB4D53500557A45 /* Keyboard.swift */,
 				A29BB92029BBD89500F8E9E7 /* CategoriesApp.swift */,
 				A29BB92229BBD89500F8E9E7 /* ContentView.swift */,
 				A29BB92429BBD89600F8E9E7 /* Assets.xcassets */,
@@ -132,6 +134,7 @@
 		A29BB93F29BBD89600F8E9E7 /* CategoriesUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A29BB93529BBD89600F8E9E7 /* CategoriesTests */,
 				A29BB94029BBD89600F8E9E7 /* CategoriesUITests.swift */,
 				A29BB94229BBD89600F8E9E7 /* CategoriesUITestsLaunchTests.swift */,
 			);
@@ -278,6 +281,7 @@
 				A29BB92D29BBD89600F8E9E7 /* Categories.xcdatamodeld in Sources */,
 				A29BB92329BBD89500F8E9E7 /* ContentView.swift in Sources */,
 				A231079A2AB0C4600072C493 /* OnBoard.swift in Sources */,
+				A21833D82AB4D53500557A45 /* Keyboard.swift in Sources */,
 				A29BB92129BBD89500F8E9E7 /* CategoriesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

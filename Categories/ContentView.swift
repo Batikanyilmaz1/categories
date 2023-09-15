@@ -2,6 +2,31 @@ import SwiftUI
 
 
 
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+extension UIApplication {
+    func addTapGestureRecognizer() {
+        guard let windowScene = connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else { return }
+        let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        tapGesture.name = "MyTapGesture"
+        window.addGestureRecognizer(tapGesture)
+    }
+}
+
+extension UIApplication: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false // set to `false` if you don't want to detect tap during other gestures
+    }
+}
+
+
 struct Category: Identifiable, Codable, Equatable {
     let id = UUID()
     let name: String
@@ -126,7 +151,7 @@ struct ContentView: View {
                 self.isEditing = (newValue == .active)
             }))
 
-        }
+        }.onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
     }
     
     func binding(for category: Category) -> Binding<Category> {
@@ -149,8 +174,8 @@ struct CategoryView: View {
     @EnvironmentObject var dataStore: DataStore
     @Binding var category: Category
     @State var newName = ""
-    @State var newIncome = ""
-    @State var newExpense = ""
+    @State var newIncome:Double?
+    @State var newExpense:Double?
     @State var selectedDate = Date()
     @State var selectedEntry: Entry?
     @State var sortOption: SortOption = .name
@@ -196,14 +221,14 @@ struct CategoryView: View {
         List {
             Section(header: Text("Add a new entry")) {
                 TextField("Name", text: $newName)
-                TextField("Income", text: $newIncome)
-                    .keyboardType(.numberPad)
-                TextField("Expense", text: $newExpense)
-                    .keyboardType(.numberPad)
+                TextField("Income", value: $newIncome, format: .number)
+                    .keyboardType(.decimalPad)
+                TextField("Expense", value: $newExpense, format: .number)
+                    .keyboardType(.decimalPad)
                 DatePicker("Date", selection: $selectedDate, displayedComponents: [.date])
                 Button(action: {
-                    guard let income = Double(newIncome),
-                          let expense = Double(newExpense) else {
+                    guard let income = newIncome,
+                          let expense = newExpense else {
                         return
                     }
                     let entry = Entry(name: newName, income: income, expense: expense, date: selectedDate)
@@ -215,8 +240,8 @@ struct CategoryView: View {
                     }
                     selectedEntry = entry
                     newName = ""
-                    newIncome = ""
-                    newExpense = ""
+                    newIncome = nil
+                    newExpense = nil
                 }) {
                     Text("Add Entry")
                 }
@@ -270,7 +295,7 @@ struct CategoryView: View {
                 }
             }
             
-        }
+        }.onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
         .navigationBarTitle(category.name)
         .onDisappear {
             do {
